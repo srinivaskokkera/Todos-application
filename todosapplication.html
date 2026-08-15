@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TaskFlow - a responsive task management application built with HTML, CSS and JavaScript.">
+    <title>TaskFlow | Todo Manager</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="todosapplication.css">
+</head>
+
+<body>
+    <main class="app">
+        <header class="app-header">
+            <div>
+                <p class="eyebrow">PRODUCTIVITY APP</p>
+                <h1>TaskFlow</h1>
+                <p class="subtitle">Organize your day. Finish what matters.</p>
+            </div>
+            <div class="date-card">
+                <span id="currentDay">Today</span>
+                <strong id="currentDate"></strong>
+            </div>
+        </header>
+
+        <section class="dashboard">
+            <div class="stat-card">
+                <span>Total tasks</span>
+                <strong id="totalCount">0</strong>
+            </div>
+            <div class="stat-card">
+                <span>Completed</span>
+                <strong id="completedCount">0</strong>
+            </div>
+            <div class="stat-card">
+                <span>Remaining</span>
+                <strong id="remainingCount">0</strong>
+            </div>
+            <div class="progress-card">
+                <div class="progress-header">
+                    <span>Daily progress</span>
+                    <strong id="progressText">0%</strong>
+                </div>
+                <div class="progress-track">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="task-panel">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">YOUR WORKSPACE</p>
+                    <h2>Create a task</h2>
+                </div>
+                <button id="clearCompletedButton" class="secondary-button" type="button">Clear completed</button>
+            </div>
+
+            <form id="todoForm" class="create-task-form">
+                <label class="sr-only" for="todoUserInput">Task description</label>
+                <input
+                    type="text"
+                    id="todoUserInput"
+                    class="todo-user-input"
+                    placeholder="What needs to be done?"
+                    maxlength="120"
+                    autocomplete="off"
+                >
+                <button class="primary-button" id="addTodoButton" type="submit">+ Add task</button>
+            </form>
+
+            <div class="tasks-heading">
+                <div>
+                    <h2>My tasks</h2>
+                    <p id="taskSummary">No tasks yet. Add your first task above.</p>
+                </div>
+                <div class="filters" role="group" aria-label="Filter tasks">
+                    <button class="filter-button active" data-filter="all" type="button">All</button>
+                    <button class="filter-button" data-filter="active" type="button">Active</button>
+                    <button class="filter-button" data-filter="completed" type="button">Completed</button>
+                </div>
+            </div>
+
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">✓</div>
+                <h3>Your task list is clear</h3>
+                <p>Add a task to start building your day.</p>
+            </div>
+
+            <ul class="todo-items-container" id="todoItemsContainer"></ul>
+
+            <div class="bottom-actions">
+                <span id="saveStatus" class="save-status">Changes are saved locally.</span>
+                <button class="secondary-button" id="saveTodoButton" type="button">Save now</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <span>TaskFlow</span>
+        <span>•</span>
+        <span>Built with HTML, CSS & JavaScript</span>
+    </footer>
+
+    <script src="todosapplication.js"></script>
+</body>
+</html>
